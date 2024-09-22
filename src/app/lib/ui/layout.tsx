@@ -75,22 +75,17 @@ export const Center = forwardRef<HTMLDivElement, CenterProps>(
 
 Center.displayName = "Center";
 
-type SquareProps = ComponentTWithoutP<
-  typeof Center,
-  "aspectRatio" | "position"
->;
+type SquareProps = ComponentTWithoutP<typeof Center, "aspectRatio">;
 
 export const Square = forwardRef<HTMLDivElement, SquareProps>(
-  ({ radius, h, p, className, ...props }, ref) => {
+  ({ radius, h, className, ...props }, ref) => {
     return (
       <Center
         ref={ref}
         {...props}
         aspectRatio="square"
-        position="relative"
         radius={radius || "2xl"}
         h={h || "auto"}
-        p={p || "15%"}
         className={cn("", className)}
       />
     );
