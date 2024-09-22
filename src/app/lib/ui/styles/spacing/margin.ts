@@ -1,22 +1,24 @@
 import { RemVariants } from "../../types/common";
 
+export type Margins = RemVariants | "auto";
+
 export type MarginXY = {
-  x?: RemVariants;
-  y?: RemVariants;
+  x?: Margins;
+  y?: Margins;
 };
 
 export type MarginSides = {
-  t?: RemVariants;
-  r?: RemVariants;
-  b?: RemVariants;
-  l?: RemVariants;
+  t?: Margins;
+  r?: Margins;
+  b?: Margins;
+  l?: Margins;
 };
 
-export type MarginVariants = RemVariants | MarginXY | MarginSides;
+export type MarginVariants = Margins | MarginXY | MarginSides;
 
 export class Margin {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "m-0"],
@@ -86,8 +88,8 @@ export class Margin {
 }
 
 class MarginX {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "mx-0"],
@@ -129,14 +131,14 @@ class MarginX {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
 
 class MarginY {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "my-0"],
@@ -178,14 +180,14 @@ class MarginY {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
 
 class MarginT {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "mt-0"],
@@ -227,14 +229,14 @@ class MarginT {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
 
 class MarginR {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "mr-0"],
@@ -276,14 +278,14 @@ class MarginR {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
 
 class MarginB {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "mb-0"],
@@ -325,14 +327,14 @@ class MarginB {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
 
 class MarginL {
-  private static instance: Map<RemVariants | "auto", string> = new Map<
-    RemVariants | "auto",
+  private static instance: Map<Margins, string> = new Map<
+    Margins,
     string
   >([
     [0, "ml-0"],
@@ -374,7 +376,7 @@ class MarginL {
 
   private constructor() {}
 
-  public static get(m: RemVariants) {
+  public static get(m: Margins) {
     return this.instance.get(m);
   }
 }
