@@ -1,7 +1,7 @@
 import { Box } from "./lib/ui/box";
 import { Heading, Highlight, StyledText, Text } from "./lib/ui/text";
 import { Center, Circle, Flex, Grid, Square, Stack } from "./lib/ui/layout";
-import { Input } from "./lib/ui/input";
+import { Input, InputElement, InputGroup } from "./lib/ui/input";
 import { Button } from "./lib/ui/button";
 import Link from "next/link";
 
@@ -44,15 +44,20 @@ export default function Home() {
         <Link href="/">This is a button</Link>
       </Button>
 
-      <Input
-        variant="filled"
-        maxW={"xl"}
-        size="lg"
-        color="secondary"
-        // disabled
-        placeholder="This is an input"
-        className="my-4"
-      />
+      <InputGroup maxW={64}>
+        <InputElement on="left">Le</InputElement>
+        <Input
+          type="text"
+          variant="filled"
+          maxW={"xl"}
+          // size="xs"
+          color="secondary"
+          // disabled
+          placeholder="This is an input"
+          className=""
+        />
+        <InputElement on="right">R</InputElement>
+      </InputGroup>
 
       <Text
         bg="secondary"
